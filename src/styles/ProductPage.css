@@ -1,0 +1,19 @@
+.ProductPage {
+   max-width: 800px;
+   margin: 0 auto;
+   padding: 2rem 1rem;
+}
+
+.ProductPage h1 {
+   text-align: center;
+}
+
+.ProductPage-list {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.ProductPage-list-item {
+   margin-bottom: 1rem;
+}

@@ -1,0 +1,104 @@
+.ProductDetail-product {
+   display: flex;
+   align-items: flex-start;
+   gap: 2rem;
+   padding: 2rem 1rem;
+   max-width: 1000px;
+   margin: 0 auto;
+}
+
+.ProductDetail-image {
+   width: 150px;
+   height: auto;
+   object-fit: cover;
+   border-radius: 8px;
+}
+
+.ProductDetail-info {
+   flex: 1;
+}
+
+.ProductDetail-price {
+   font-size: 1.2rem;
+   margin-top: 0.5rem;
+}
+
+.ProductDetail-quantity {
+   margin-top: 1rem;
+   display: flex;
+   gap: 0.5rem;
+}
+
+.ProductDetail-quantity input {
+   width: 30px;
+   text-align: center;
+   cursor: default;
+}
+
+.ProductDetail-quantity button {
+   padding: 0.3rem 0.6rem;
+   cursor: pointer;
+   background: black;
+   color: white;
+   border: none;
+   border-radius: 4px;
+}
+
+.ProductDetail-quantity button:hover {
+   background: rgb(110, 110, 110);
+}
+
+.ProductDetail-quantity button.ProductDetail-add:hover {
+   background: #00bb77;
+}
+
+.ProductDetail-related {
+   padding: 0.5rem 1rem;
+   margin-top: 1rem;
+   background-color: #f9f9f9;
+   border-top: 1px solid #ccc;
+   font-size: 0.9rem;
+}
+
+.ProductDetail-RelatedItems {
+   display: flex;
+   gap: 0.75rem;
+   flex-wrap: wrap;
+   margin-top: 0.5rem;
+}
+
+.ProductDetail-RelatedItems a {
+   text-decoration: none;
+}
+
+.ProductDetail-RelatedItems a:visited {
+   color: black;
+}
+
+.ProductDetail-RelatedItem {
+   width: 150px;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   padding: 0.5rem;
+   background-color: #fff;
+   text-align: center;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+   transition: transform 0.2s ease;
+}
+
+.ProductDetail-RelatedItem:hover {
+   transform: scale(1.03);
+   background-color: #f0f0f0;
+   cursor: pointer;
+}
+
+.ProductDetail-RelatedItem img {
+   width: 100%;
+   height: 100px;
+   object-fit: cover;
+   border-radius: 4px;
+}
+
+button {
+   transition: background-color ease 0.2s;
+}

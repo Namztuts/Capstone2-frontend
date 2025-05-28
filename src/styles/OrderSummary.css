@@ -1,0 +1,80 @@
+.OrderSummary {
+   width: 300px;
+   margin: 0 auto;
+   margin-top: 4rem;
+   padding: 1rem;
+   font-family: 'Courier New', Courier, monospace;
+   background: white;
+   border: 1px solid #000;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   color: #000;
+}
+
+.OrderSummary-title {
+   text-align: center;
+   font-size: 1.2rem;
+   margin-bottom: 1rem;
+   border-bottom: 1px dashed #000;
+   padding-bottom: 0.5rem;
+}
+
+.logo {
+   display: block;
+   margin: 0 auto 1rem;
+   max-width: 100px;
+}
+
+.OrderSummary-items {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+}
+
+.OrderSummary-item {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 0.5rem;
+   border-bottom: 1px dotted #000;
+   padding-bottom: 0.25rem;
+}
+
+.item-name {
+   font-weight: bold;
+}
+
+.item-details {
+   white-space: nowrap;
+}
+
+.OrderSummary-summary {
+   margin-top: 1rem;
+}
+
+.summary-line {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 0.5rem;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+.total {
+   font-weight: bold;
+   border-top: 1px solid #000;
+   padding-top: 0.5rem;
+}
+
+.thank-you {
+   text-align: center;
+   margin-top: 2rem;
+   font-style: italic;
+   font-size: 0.9rem;
+}
+
+.OrderSummary-meta {
+   font-size: 0.85rem;
+   margin-bottom: 1rem;
+   border-bottom: 1px dotted #000;
+   padding-bottom: 0.5rem;
+   text-align: left;
+   line-height: 1.4;
+}

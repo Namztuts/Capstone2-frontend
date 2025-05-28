@@ -1,0 +1,96 @@
+/* Center the form horizontally and push towards the top of the page */
+.Register {
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+   min-height: 100vh;
+   padding-top: 4rem;
+   background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+}
+
+/* Box wrapper */
+.Register-box {
+   background-color: white;
+   padding: 2rem 2.5rem;
+   border-radius: 8px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   width: 100%;
+   max-width: 400px;
+   margin: 0 auto;
+}
+
+.Register-box h2 {
+   text-align: center;
+   margin-bottom: 1.5rem;
+   font-weight: 500;
+}
+
+/* Input group styling */
+.Register-form-group {
+   margin-bottom: 1rem;
+}
+
+.Register-form-group label {
+   display: block;
+   margin-bottom: 0.5rem;
+   font-weight: 500;
+}
+
+.Register-form-group input {
+   width: 100%;
+   max-width: 100%;
+   padding: 0.6rem 0.8rem;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 1rem;
+   box-sizing: border-box;
+}
+
+.Register-form-group input:focus {
+   outline: none;
+   border-color: #4f46e5;
+   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Error message */
+.Register-error-message {
+   color: #e74c3c;
+   background: #fdecea;
+   padding: 0.5rem;
+   border-radius: 4px;
+   margin-bottom: 1rem;
+   font-size: 0.95rem;
+}
+
+/* Login button */
+.Register-button {
+   width: 100%;
+   padding: 0.7rem;
+   background-color: black;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   font-size: 1rem;
+   cursor: pointer;
+   transition: background-color ease 0.2s;
+}
+
+.Register-button:hover {
+   background-color: #8686af;
+}
+
+/* Register link */
+.Register-login {
+   text-align: center;
+   margin-top: 1rem;
+   font-size: 0.95rem;
+}
+
+.Register-login a {
+   color: #3498db;
+   text-decoration: none;
+}
+
+.Register-login a:hover {
+   text-decoration: underline;
+}

@@ -1,0 +1,123 @@
+/* Centering the cart like Checkout */
+.Cart {
+   display: flex;
+   justify-content: center;
+   padding: 2rem;
+   background-color: #f5f6fa;
+   min-height: 100vh;
+}
+
+.Cart-main {
+   background-color: #fff;
+   padding: 2rem;
+   width: 100%;
+   max-width: 600px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 8px;
+}
+
+.Cart-main h1 {
+   margin: 0;
+   text-align: center;
+}
+
+.Cart-main p {
+   margin: 0.5rem 0 2rem 0;
+   color: #444;
+   font-style: italic;
+   text-align: center;
+}
+
+.CartItem-description {
+   margin-bottom: 0.5rem;
+   font-style: italic;
+}
+
+.Cart-items {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+
+.CartItem {
+   background-color: #f9f9f9;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   padding: 1rem;
+   margin-bottom: 1rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.CartItem:hover {
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.CartItem-details {
+   display: flex;
+   flex-direction: column;
+}
+
+.CartItem-text {
+   display: flex;
+   flex-direction: column;
+   gap: 0.25rem;
+}
+
+.CartItem-controls {
+   display: flex;
+   gap: 0.5rem;
+   margin-top: 0.5rem;
+}
+
+.CartItem-controls button {
+   padding: 0.3rem 0.6rem;
+   cursor: pointer;
+   background: black;
+   color: white;
+   border: none;
+   border-radius: 4px;
+}
+
+.CartItem-controls button:hover {
+   background: rgb(110, 110, 110);
+}
+
+.CartItem-controls button:disabled {
+   opacity: 0.6;
+   cursor: not-allowed;
+}
+
+.CartItem-controls button.CartItem-delete:hover {
+   background: #b7410e;
+}
+
+.CartItem-thumbnail {
+   width: 150px;
+   height: auto;
+   object-fit: cover;
+   border-radius: 6px;
+}
+
+.Cart-proceed {
+   flex: 1;
+   margin: 0 0.5rem;
+   padding: 0.75rem 1rem;
+   font-size: 1rem;
+   border-radius: 4px;
+   font-size: 1rem;
+   border: none;
+   color: white;
+   background: rgb(0, 0, 0);
+   cursor: pointer;
+}
+
+.Cart-proceed:hover {
+   background: #00bb77;
+}
+
+h3 {
+   margin-left: 1rem;
+}
