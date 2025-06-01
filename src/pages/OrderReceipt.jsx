@@ -47,7 +47,7 @@ function OrderSummary() {
       <div className="OrderSummary">
          <h1 className="OrderSummary-title">Your Receipt</h1>
          <img
-            src="/logo2.png"
+            src="/logo4.png"
             alt="A&E Logo"
             className="logo"
          />

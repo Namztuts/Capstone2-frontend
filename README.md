@@ -1,8 +1,75 @@
-# React + Vite
+# Anything & Everything Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live URL:** [https://capstone2-frontend-yvlo.onrender.com/](https://capstone2-frontend-yvlo.onrender.com/)
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the frontend for **Anything & Everything**, a full-featured e-commerce platform. It is built with React and interacts with a custom backend API to provide user authentication, product browsing, cart management, and order placement.
+
+---
+
+## Features
+
+-  User signup and login with JWT-based authentication
+-  Browse and search for products by category
+-  Add and update cart items
+-  Checkout and view order history
+
+---
+
+## User Flow
+
+1. **Signup/Login** — Create an account or log in
+2. **Browse Products** — Browse by category (search coming soon)
+3. **Manage Cart** — Add, remove, or update items
+4. **Checkout** — Submit an order
+5. **View Orders** — See past purchases
+
+---
+
+## Tech Stack
+
+-  **Backend:** Node.js, Express, PostgreSQL
+-  **Auth & Security:** JWT, bcrypt, dotenv
+-  **Validation:** jsonschema
+-  **Database:** pg
+
+---
+
+## Setup Instructions
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/Namztuts/Capstone2-frontend
+   cd anything-and-everything
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## Testing
+
+```bash
+cd anything-and-everything
+npm install
+jest
+```
+
+---
+
+## Related
+
+-  Backend repo: [Anything & Everything API](https://github.com/Namztuts/Capstone2-backend)
+
+---
