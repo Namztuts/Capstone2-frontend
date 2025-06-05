@@ -43,6 +43,11 @@ function AuthProvider({ children }) {
             setUser(user);
             localStorage.setItem('username', username); //add to localStorage
          } catch (error) {
+            //NOTE: testing the unauthorized page
+            if (err.includes('Unauthorized')) {
+               navigate('/unauthorized');
+            }
+
             console.error('Invalid token:', error);
             setUser(null);
          } finally {

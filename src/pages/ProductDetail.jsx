@@ -1,7 +1,8 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useUser } from '../context/UserContext';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../context/ToastContext';
 import API from '../api/api';
 import '../styles/ProductDetail.css';
 
@@ -10,8 +11,10 @@ function ProductDetail() {
    const [product, setProduct] = useState(null);
    const [quantity, setQuantity] = useState(1);
    const [categoryProducts, setCategoryProducts] = useState([]);
-   const { error, setError, setIsLoading } = useUser();
+   const { error, setError, setIsLoading, user } = useUser();
    const { handleAddToCart } = useCart();
+   const { showToast } = useToast();
+   const navigate = useNavigate();
 
    useEffect(() => {
       async function fetchProduct() {
@@ -57,12 +60,17 @@ function ProductDetail() {
       setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
    };
 
-   const handleSubmit = () => {
-      if (quantity > 0) {
-         handleAddToCart(product, quantity);
+   const handleSubmit = async () => {
+      if (!user) {
+         showToast(`You must be logged in to add items to cart.`, 'error');
+         navigate('/login');
+         return;
       }
-      alert(`${quantity} of ${product.name} was added to the cart`);
 
+      if (quantity > 0) {
+         await handleAddToCart(product, quantity);
+         showToast(`${quantity} ${product.name}(s) added to cart!`, 'success');
+      }
       setQuantity(1); //reset quantity after adding to cart
    };
 

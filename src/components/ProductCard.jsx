@@ -1,12 +1,18 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { useUser } from '../context/UserContext';
+import { useToast } from '../context/ToastContext';
+
 import '../styles/ProductCard.css';
 
 function ProductCard({ product }) {
    const { id, name, description } = product;
    const [quantity, setQuantity] = useState(1);
    const { handleAddToCart } = useCart();
+   const { user } = useUser();
+   const { showToast } = useToast();
+   const navigate = useNavigate();
 
    const handleIncrement = () => {
       setQuantity((prev) => prev + 1);
@@ -16,12 +22,18 @@ function ProductCard({ product }) {
       setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
    };
 
-   const handleSubmit = () => {
-      if (quantity > 0) {
-         handleAddToCart(product, quantity);
+   const handleSubmit = async () => {
+      //navigate to login if there is no user logged in
+      if (!user) {
+         showToast(`You must be logged in to add items to cart.`, 'error');
+         navigate('/login');
+         return;
       }
-      alert(`${quantity} of ${name} was added to the cart`);
 
+      if (quantity > 0) {
+         await handleAddToCart(product, quantity);
+         showToast(`${quantity} ${product.name}(s) added to cart!`, 'success');
+      }
       setQuantity(1); //reset quantity after adding to cart
    };
 

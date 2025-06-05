@@ -10,6 +10,7 @@ import Checkout from './pages/Checkout';
 import Profile from './pages/Profile';
 import Categories from './pages/Categories';
 import OrderReceipt from './pages/OrderReceipt';
+import Unauthorized from './pages/Unauthorized';
 
 function App() {
    return (
@@ -55,6 +56,12 @@ function App() {
             <Route
                path="/checkout/receipt/:id"
                element={<OrderReceipt />}
+            />
+
+            {/* NOTE: 401 error page */}
+            <Route
+               path="/unauthorized"
+               element={<Unauthorized />}
             />
          </Routes>
       </>

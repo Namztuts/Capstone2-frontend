@@ -265,7 +265,7 @@ class API {
 
          return response;
       } catch (error) {
-         console.error('Error adding item to cart:', error);
+         console.error('Error updating cart item:', error);
          throw error;
       }
    }
