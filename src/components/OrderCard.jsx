@@ -22,8 +22,10 @@ function OrderCard({ order }) {
          }
       }
 
-      getOrderItems();
-   }, []);
+      if (id) {
+         getOrderItems();
+      }
+   }, [id]);
 
    if (isLoading || !order) return <p>Loading order summary...</p>;
 

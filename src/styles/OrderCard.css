@@ -32,3 +32,25 @@
 li {
    list-style: none;
 }
+
+.OrderCard-items {
+   padding: 15px;
+   border: solid rgb(206, 206, 206) 1px;
+   border-radius: 12px;
+   background-color: #f5f6fa;
+}
+
+.OrderCard-items h4 {
+   font-size: 0.95rem;
+   font-weight: 600;
+}
+
+.OrderCard-items ul {
+   list-style: none;
+   padding-left: 0;
+}
+
+.OrderCard-items li {
+   font-size: 0.9rem;
+   padding: 4px 0;
+}

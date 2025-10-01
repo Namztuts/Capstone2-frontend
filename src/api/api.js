@@ -160,7 +160,6 @@ class API {
 
       try {
          let response = await this.request(`orders/username/${id}`);
-         console.log('api response', response.orders);
          return response.orders;
       } catch (error) {
          console.error('Error getting products:', error);
