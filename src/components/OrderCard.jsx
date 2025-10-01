@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useUser } from '../context/UserContext';
 import API from '../api/api';
 import '../styles/OrderCard.css';
 
@@ -7,18 +6,18 @@ function OrderCard({ order }) {
    const { id, created_at, total } = order;
    const [expanded, setExpanded] = useState(false);
    const [orderItems, setOrderItems] = useState([]);
-   const { setIsLoading, isLoading } = useUser();
+   const [loading, setLoading] = useState(false);
 
    useEffect(() => {
       async function getOrderItems() {
-         setIsLoading(true); //loading while the data is being fetched and shown on page
+         setLoading(true); //loading while the data is being fetched and shown on page
          try {
             let response = await API.getOrderItems(id);
             setOrderItems(Object.values(response));
          } catch (error) {
             console.error('Error fetching order items:', error);
          } finally {
-            setIsLoading(false); //finally runs regardless of wether try or catch succeed
+            setLoading(false); //finally runs regardless of wether try or catch succeed
          }
       }
 
@@ -27,7 +26,7 @@ function OrderCard({ order }) {
       }
    }, [id]);
 
-   if (isLoading || !order) return <p>Loading order summary...</p>;
+   if (loading || !order) return <p>Loading order summary...</p>;
 
    return (
       <div
