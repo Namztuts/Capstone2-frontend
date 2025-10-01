@@ -153,6 +153,21 @@ class API {
       }
    }
 
+   //Get all orders via user_id
+   static async getAllOrders(id) {
+      //FIN:
+      if (!id) return []; //return an empty array if there is no id
+
+      try {
+         let response = await this.request(`orders/username/${id}`);
+         console.log('api response', response.orders);
+         return response.orders;
+      } catch (error) {
+         console.error('Error getting products:', error);
+         throw error;
+      }
+   }
+
    //****** POST routes ******
 
    //Register a new user | userData object { username, first_name, last_name, email }

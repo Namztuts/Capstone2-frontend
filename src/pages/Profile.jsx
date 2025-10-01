@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useUser } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
+import OrderCard from '../components/OrderCard';
 import API from '../api/api';
 import '../styles/Profile.css';
 
@@ -15,11 +16,20 @@ function Profile() {
    };
 
    const navigate = useNavigate();
-   const { user, setUser, error, setError, isLoading, logout, setToken } =
-      useUser();
+   const {
+      user,
+      setUser,
+      error,
+      setError,
+      isLoading,
+      setIsLoading,
+      logout,
+      setToken,
+   } = useUser();
    const [formData, setFormData] = useState(INITIAL_STATE);
    const [successMsg, setSuccessMsg] = useState('');
    const [activeSection, setActiveSection] = useState('profile');
+   const [orderItems, setOrderItems] = useState([]);
 
    //populating the form with existing user data
    useEffect(() => {
@@ -32,6 +42,24 @@ function Profile() {
             // isAdmin: user.isAdmin || '',
             password: '', // for editing, keep this blank unless changing
          });
+      }
+   }, [user]);
+
+   useEffect(() => {
+      async function getOrderItems() {
+         setIsLoading(true); //loading while the data is being fetched and shown on page
+         try {
+            let response = await API.getAllOrders(user.username);
+            setOrderItems(Object.values(response));
+            //NOTE: allow expansion of each order
+         } catch (error) {
+            console.error('Error fetching order items:', error);
+         } finally {
+            setIsLoading(false); //finally runs regardless of wether try or catch succeed
+         }
+      }
+      if (user) {
+         getOrderItems();
       }
    }, [user]);
 
@@ -249,7 +277,19 @@ function Profile() {
                {activeSection === 'orders' && (
                   <>
                      <h2>Order History</h2>
-                     <p>All your previous orders are here... soon...</p>
+                     <ul className="Profile-orders">
+                        {orderItems.map((order) => (
+                           <li
+                              key={order.id}
+                              className="Profile-orders-list-item"
+                           >
+                              {/* <p>{order.created_at}</p>
+                              <p>{order.total}</p>
+                              <p>{order.id}</p> */}
+                              <OrderCard order={order} />
+                           </li>
+                        ))}
+                     </ul>
                   </>
                )}
 
